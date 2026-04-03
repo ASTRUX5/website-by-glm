@@ -3,139 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Kashmir Estates</title>
-  <meta name="description" content="The story behind Kashmir Estates — twelve years of finding people their place in paradise.">
+  <title>About Us — Kashmir Estates</title>
+  <meta name="description" content="12 years of finding homes in paradise. Learn about our story and team.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://images.pexels.com/photos/1687885/pexels-photo-1687885.jpeg?auto=compress&cs=tinysrgb&w=1920">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <svg class="grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
-    <rect width="100%" height="100%" filter="url(#noise)"/>
-  </svg>
-
-  <nav class="nav nav--scrolled" id="nav">
+  <nav class="nav scrolled">
     <a href="index.html" class="nav__logo">Kashmir Estates</a>
     <ul class="nav__links">
-      <li><a href="index.html" class="nav__link">home</a></li>
       <li><a href="properties.html" class="nav__link">properties</a></li>
-      <li><a href="about.html" class="nav__link">about</a></li>
+      <li><a href="about.html" class="nav__link active">about</a></li>
       <li><a href="contact.html" class="nav__link">contact</a></li>
     </ul>
-    <button class="nav__hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <div class="nav__hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu__bg" style="background-image:url('https://images.pexels.com/photos/1687885/pexels-photo-1687885.jpeg?auto=compress&cs=tinysrgb&w=1200')"></div>
-    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
-    <ul class="mobile-menu__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="properties.html">Properties</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+  <div class="menu-overlay">
+    <ul class="menu-overlay__links">
+      <li><a href="properties.html" class="menu-overlay__link">Properties</a></li>
+      <li><a href="about.html" class="menu-overlay__link">About</a></li>
+      <li><a href="contact.html" class="menu-overlay__link">Contact</a></li>
     </ul>
   </div>
 
-  <!-- Editorial opening -->
-  <section class="about-hero">
-    <div class="about-hero__bg">
-      <img src="https://images.pexels.com/photos/1687885/pexels-photo-1687885.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Himalayan peaks" loading="lazy">
-    </div>
-    <p class="about-statement reveal">We started because we believe that finding a home in Kashmir should feel like falling in love — slow, certain, and full of wonder.</p>
-  </section>
+  <main>
+    <section class="about-hero">
+      <h1 class="about-hero__text reveal">
+        We don't just sell properties.<br>
+        <span class="text-saffron">We find you your place in Kashmir.</span>
+      </h1>
+    </section>
 
-  <!-- Pull quote -->
-  <blockquote class="about-pull-quote reveal reveal--left">"Kashmir doesn't sell itself with brochures. It sells itself with sunrises."</blockquote>
+    <section class="about-story">
+      <p class="about-story__quote reveal">
+        "Twelve years ago, we started with a simple belief: that finding a home in Kashmir should feel like discovering a piece of paradise, not navigating a transaction."
+      </p>
+            <div class="reveal" style="margin: var(--space-xl) 0;">
+        <p>Today, we've helped over 500 families find their dream homes in the valley. From lakefront estates to mountain retreats, each property in our portfolio is carefully curated—not just for its features, but for the life it enables.</p>
+        <p>We understand that buying a home in Kashmir is different. It's not just about square footage and amenities. It's about waking up to mountains, breathing air that feels different, and finding a pace of life that reminds you what matters.</p>
+      </div>
 
-  <!-- Another quote, opposite side -->
-  <blockquote class="about-pull-quote reveal reveal--left" style="transform:rotate(2deg);text-align:right;margin-left:auto;">"Every home we've placed someone in has a story. We make sure it's a good one."</blockquote>
+      <blockquote class="about-story__quote reveal">
+        "Our clients don't become customers. They become part of the Kashmir Estates family."
+      </blockquote>
+    </section>
 
-  <!-- Team -->
-  <section class="team-section">
-    <h2 class="team-section__title reveal">The people behind the doors</h2>
-    <div class="team-grid">
-      <div class="team-member reveal" data-delay="1">
-        <img class="team-member__img" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Faisal Mir — Founder" loading="lazy">
-        <h3 class="team-member__name">Faisal Mir</h3>
-        <p class="team-member__role">founder</p>
+    <section class="team-grid">
+      <div class="team-member reveal">
+        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600" 
+             alt="Team Member" 
+             class="team-member__image">
+        <h3 class="team-member__name">Ahmad Hassan</h3>
+        <p class="team-member__role">Founder & CEO</p>
       </div>
-      <div class="team-member reveal" data-delay="2">
-        <img class="team-member__img" src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sana Bhat — Head of Curation" loading="lazy">
-        <h3 class="team-member__name">Sana Bhat</h3>
-        <p class="team-member__role">head of curation</p>
+      
+      <div class="team-member reveal">
+        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600" 
+             alt="Team Member" 
+             class="team-member__image">
+        <h3 class="team-member__name">Zara Khan</h3>
+        <p class="team-member__role">Head of Properties</p>
       </div>
-      <div class="team-member reveal" data-delay="3">
-        <img class="team-member__img" src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Arif Lone — Client Relations" loading="lazy">
-        <h3 class="team-member__name">Arif Lone</h3>
-        <p class="team-member__role">client relations</p>
+      
+      <div class="team-member reveal">
+        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600" 
+             alt="Team Member" 
+             class="team-member__image">
+        <h3 class="team-member__name">Farhan Mir</h3>
+        <p class="team-member__role">Senior Consultant</p>
       </div>
-      <div class="team-member reveal" data-delay="4">
-        <img class="team-member__img" src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Meera Kaul — Design" loading="lazy">
-        <h3 class="team-member__name">Meera Kaul</h3>
-        <p class="team-member__role">interior consultation</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Timeline -->
-  <section class="timeline-section">
-    <h2 class="timeline-section__title reveal">Our story so far</h2>
-    <div class="timeline-track">
-      <div class="timeline-item">
-        <div class="timeline-year">2013</div>
-        <p class="timeline-text">Started with a single listing on the boulevard and a belief that Kashmir deserved better than classified ads.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2015</div>
-        <p class="timeline-text">Placed our fiftieth family. Word of mouth became our only marketing.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2018</div>
-        <p class="timeline-text">Expanded to Gulmarg and Pahalgam. Started curating mountain properties.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2020</div>
-        <p class="timeline-text">The year everything paused. We used it to deepen relationships, not chase numbers.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2023</div>
-        <p class="timeline-text">Two hundred properties. Twelve years. Still driven by the same feeling — that Kashmir changes people.</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2025</div>
-        <p class="timeline-text">Today. Still here. Still believing that the right home finds you, not the other way around.</p>
-      </div>
-    </div>
-  </section>
+    <section style="padding: var(--space-xl) var(--space-lg); text-align: center; background: var(--clay-slate); margin: var(--space-xl) 0;">
+      <h2 class="reveal" style="margin-bottom: var(--space-md);">Come find your Kashmir with us.</h2>
+      <a href="contact.html" class="btn btn--primary magnetic reveal">let's talk →</a>
+    </section>
+  </main>
 
-  <!-- Closing CTA -->
-  <section class="about-cta">
-    <p class="about-cta__text reveal">Come find your Kashmir with us.</p>
-    <a href="contact.html" class="btn btn--saffron btn--magnetic reveal" data-delay="2">let's talk <span class="btn__arrow">&rarr;</span></a>
-  </section>
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
 
   <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <a href="index.html" class="footer__logo">Kashmir Estates</a>
-        <p class="footer__tagline">finding your place in paradise</p>
+    <div class="footer__content">
+      <div>
+        <div class="footer__brand">Kashmir Estates</div>        <p class="footer__tagline">Finding you more than a home. Finding you your place in paradise.</p>
       </div>
-      <div class="footer__links">
-        <a href="properties.html">properties</a>
-        <a href="about.html">about</a>
-        <a href="contact.html">contact</a>
+      <div>
+        <div class="footer__heading">Explore</div>
+        <ul class="footer__links">
+          <li><a href="properties.html" class="footer__link">Properties</a></li>
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
       </div>
-      <p class="footer__copy">&copy; 2025 Kashmir Estates. Crafted with love in the valley.</p>
+      <div>
+        <div class="footer__heading">Properties</div>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Lake View</a></li>
+          <li><a href="#" class="footer__link">Mountain Villas</a></li>
+          <li><a href="#" class="footer__link">City Apartments</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__heading">Connect</div>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Instagram</a></li>
+          <li><a href="#" class="footer__link">Facebook</a></li>
+          <li><a href="#" class="footer__link">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Kashmir Estates. All rights reserved.</span>
+      <span>Crafted with love in Kashmir</span>
     </div>
   </footer>
-
-  <a href="https://wa.me/919876543210" class="whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
 
   <script src="main.js"></script>
 </body>
