@@ -4,219 +4,217 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Properties — Kashmir Estates</title>
-  <meta name="description" content="Browse curated properties across Kashmir — lake views, mountain villas, city apartments.">
+  <meta name="description" content="Browse our curated collection of luxury properties in Kashmir.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <svg class="grain" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
-    <rect width="100%" height="100%" filter="url(#noise)"/>
-  </svg>
-
-  <nav class="nav nav--scrolled" id="nav">
+  <nav class="nav scrolled">
     <a href="index.html" class="nav__logo">Kashmir Estates</a>
     <ul class="nav__links">
-      <li><a href="index.html" class="nav__link">home</a></li>
-      <li><a href="properties.html" class="nav__link">properties</a></li>
+      <li><a href="properties.html" class="nav__link active">properties</a></li>
       <li><a href="about.html" class="nav__link">about</a></li>
       <li><a href="contact.html" class="nav__link">contact</a></li>
     </ul>
-    <button class="nav__hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <div class="nav__hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu__bg" style="background-image:url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1200')"></div>
-    <button class="mobile-menu__close" id="mobileClose" aria-label="Close menu">&times;</button>
-    <ul class="mobile-menu__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="properties.html">Properties</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+  <div class="menu-overlay">
+    <ul class="menu-overlay__links">
+      <li><a href="properties.html" class="menu-overlay__link">Properties</a></li>
+      <li><a href="about.html" class="menu-overlay__link">About</a></li>
+      <li><a href="contact.html" class="menu-overlay__link">Contact</a></li>
     </ul>
   </div>
 
-  <!-- Page hero -->
-  <div class="page-hero">
-    <div class="page-hero__bg"><img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Kashmir mountains"></div>
-    <div class="page-hero__overlay"></div>
-    <h1 class="page-hero__title reveal">Properties</h1>
-  </div>
-
-  <!-- Floating filters -->
-  <div class="filters">
-    <button class="filter-pill filter-pill--active" data-filter="all">all</button>
-    <button class="filter-pill" data-filter="lake">lake view</button>
-    <button class="filter-pill" data-filter="mountain">mountain</button>
-    <button class="filter-pill" data-filter="city">city</button>
-    <button class="filter-pill" id="mapToggle">map view</button>
-  </div>
-
-  <!-- Map view (hidden by default) -->
-  <div class="map-view">
-    <div class="map-illustration" style="background:linear-gradient(135deg,var(--slate) 0%,rgba(26,74,74,0.3) 50%,var(--slate) 100%);">
-      <!-- Stylized illustrated map background -->
-      <svg viewBox="0 0 1200 700" style="width:100%;height:100%;opacity:0.15;" preserveAspectRatio="xMidYMid slice">
-        <path d="M100,350 Q200,200 400,250 T700,200 T1000,300 T1100,350" fill="none" stroke="var(--cream)" stroke-width="1"/>
-        <path d="M150,400 Q350,350 500,380 T800,320 T1050,380" fill="none" stroke="var(--cream)" stroke-width="0.5"/>
-        <ellipse cx="600" cy="380" rx="180" ry="60" fill="none" stroke="var(--saffron)" stroke-width="0.8" opacity="0.4"/>
-        <text x="600" y="395" fill="var(--saffron)" font-size="10" text-anchor="middle" opacity="0.5" font-family="var(--font-b)">Dal Lake</text>
-        <circle cx="350" cy="280" r="80" fill="none" stroke="var(--cream)" stroke-width="0.3" opacity="0.3"/>
-        <text x="350" y="285" fill="var(--cream)" font-size="8" text-anchor="middle" opacity="0.3" font-family="var(--font-b)">Gulmarg</text>
-      </svg>
-      <!-- Pins -->
-      <div class="map-pin" style="top:55%;left:50%;"><span class="map-pin-label">Dal Lake Heritage Villa</span></div>
-      <div class="map-pin" style="top:38%;left:28%;"><span class="map-pin-label">Gulmarg Mountain Retreat</span></div>
-      <div class="map-pin" style="top:52%;left:48%;"><span class="map-pin-label">Srinagar City Apartment</span></div>
-      <div class="map-pin" style="top:65%;left:68%;"><span class="map-pin-label">Pahalgam Valley Villa</span></div>
-      <div class="map-pin" style="top:48%;left:44%;"><span class="map-pin-label">Nigeen Lake Cottage</span></div>
-      <div class="map-pin" style="top:42%;left:36%;"><span class="map-pin-label">Sonamarg Alpine Lodge</span></div>
-      <div class="map-pin" style="top:58%;left:54%;"><span class="map-pin-label">Srinagar Riverside</span></div>
-      <div class="map-pin" style="top:50%;left:60%;"><span class="map-pin-label">Pampore Saffron Villa</span></div>
+  <main class="properties-page">
+    <div class="properties-filter">
+      <button class="filter-pill active">All Properties</button>
+      <button class="filter-pill">Lake View</button>
+      <button class="filter-pill">Mountain Villas</button>
+      <button class="filter-pill">City Apartments</button>
+      <button class="filter-pill">Under ₹2 Cr</button>
+      <button class="filter-pill">₹2-4 Cr</button>
+      <button class="filter-pill">Above ₹4 Cr</button>
     </div>
-  </div>
 
-  <!-- Properties grid -->
-  <div class="properties-grid">
-    <a href="property-detail.html" class="card reveal" data-category="lake">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/2581606/pexels-photo-2581606.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dal Lake Heritage Villa" loading="lazy">
-        <span class="card__price">&#8377;4.2 Cr</span>
-        <span class="card__location">34.0837° N, 74.7973° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">4 beds</span><span class="card__details-item">3 baths</span><span class="card__details-item">3,200 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Dal Lake Heritage Villa</div>
-    </a>
+    <div class="properties-grid">
+      <article class="property-card reveal">        <a href="property-detail.html">
+          <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800" 
+               alt="Luxury Villa" 
+               class="property-card__image">
+          <div class="property-card__price">₹2.5 Cr</div>
+          <div class="property-card__location">34.0837° N, 74.7973° E</div>
+          <div class="property-card__heart">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <div class="property-card__details">
+            <div class="property-card__meta">
+              <span>4 beds</span>
+              <span>3 baths</span>
+              <span>3,200 sqft</span>
+            </div>
+            <div class="property-card__cta">Explore →</div>
+          </div>
+        </a>
+      </article>
 
-    <a href="property-detail.html" class="card reveal" data-delay="1" data-category="mountain">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gulmarg Mountain Retreat" loading="lazy">
-        <span class="card__price">&#8377;6.8 Cr</span>
-        <span class="card__location">34.0474° N, 74.3806° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">5 beds</span><span class="card__details-item">4 baths</span><span class="card__details-item">4,500 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Gulmarg Mountain Retreat</div>
-    </a>
+      <article class="property-card reveal">
+        <a href="property-detail.html">
+          <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800" 
+               alt="Mountain Villa" 
+               class="property-card__image">
+          <div class="property-card__price">₹3.8 Cr</div>
+          <div class="property-card__location">34.1526° N, 74.8234° E</div>
+          <div class="property-card__heart">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <div class="property-card__details">
+            <div class="property-card__meta">
+              <span>5 beds</span>
+              <span>4 baths</span>
+              <span>4,500 sqft</span>
+            </div>
+            <div class="property-card__cta">Explore →</div>
+          </div>
+        </a>
+      </article>
 
-    <a href="property-detail.html" class="card reveal" data-delay="2" data-category="city">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/3721556/pexels-photo-3721556.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Srinagar City Apartment" loading="lazy">
-        <span class="card__price">&#8377;1.5 Cr</span>
-        <span class="card__location">34.0837° N, 74.7973° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">3 beds</span><span class="card__details-item">2 baths</span><span class="card__details-item">1,800 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Srinagar City Apartment</div>
-    </a>
+      <article class="property-card reveal">
+        <a href="property-detail.html">
+          <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800" 
+               alt="Lake View Home" 
+               class="property-card__image">
+          <div class="property-card__price">₹1.9 Cr</div>
+          <div class="property-card__location">34.0912° N, 74.8056° E</div>
+          <div class="property-card__heart">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>          </div>
+          <div class="property-card__details">
+            <div class="property-card__meta">
+              <span>3 beds</span>
+              <span>2 baths</span>
+              <span>2,100 sqft</span>
+            </div>
+            <div class="property-card__cta">Explore →</div>
+          </div>
+        </a>
+      </article>
 
-    <a href="property-detail.html" class="card reveal" data-delay="3" data-category="mountain">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pahalgam Valley Villa" loading="lazy">
-        <span class="card__price">&#8377;5.4 Cr</span>
-        <span class="card__location">34.0161° N, 75.3150° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">4 beds</span><span class="card__details-item">3 baths</span><span class="card__details-item">3,800 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Pahalgam Valley Villa</div>
-    </a>
+      <article class="property-card reveal">
+        <a href="property-detail.html">
+          <img src="https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&w=800" 
+               alt="Modern Apartment" 
+               class="property-card__image">
+          <div class="property-card__price">₹1.2 Cr</div>
+          <div class="property-card__location">34.0856° N, 74.7989° E</div>
+          <div class="property-card__heart">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <div class="property-card__details">
+            <div class="property-card__meta">
+              <span>2 beds</span>
+              <span>2 baths</span>
+              <span>1,400 sqft</span>
+            </div>
+            <div class="property-card__cta">Explore →</div>
+          </div>
+        </a>
+      </article>
 
-    <a href="property-detail.html" class="card reveal" data-delay="4" data-category="lake">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nigeen Lake Cottage" loading="lazy">
-        <span class="card__price">&#8377;3.1 Cr</span>
-        <span class="card__location">34.1120° N, 74.8350° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">3 beds</span><span class="card__details-item">2 baths</span><span class="card__details-item">2,400 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Nigeen Lake Cottage</div>
-    </a>
+      <article class="property-card reveal">
+        <a href="property-detail.html">
+          <img src="https://images.pexels.com/photos/2612355/pexels-photo-2612355.jpeg?auto=compress&cs=tinysrgb&w=800" 
+               alt="Lakefront Estate" 
+               class="property-card__image">
+          <div class="property-card__price">₹4.5 Cr</div>
+          <div class="property-card__location">34.0789° N, 74.8123° E</div>
+          <div class="property-card__heart">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <div class="property-card__details">
+            <div class="property-card__meta">
+              <span>6 beds</span>
+              <span>5 baths</span>
+              <span>5,800 sqft</span>
+            </div>
+            <div class="property-card__cta">Explore →</div>          </div>
+        </a>
+      </article>
 
-    <a href="property-detail.html" class="card card--hidden reveal" data-delay="1" data-category="mountain" style="display:none;">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/209842/pexels-photo-209842.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sonamarg Alpine Lodge" loading="lazy">
-        <span class="card__price">&#8377;7.2 Cr</span>
-        <span class="card__location">34.2591° N, 75.3144° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">6 beds</span><span class="card__details-item">5 baths</span><span class="card__details-item">5,200 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Sonamarg Alpine Lodge</div>
-    </a>
+      <article class="property-card reveal">
+        <a href="property-detail.html">
+          <img src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800" 
+               alt="Hilltop Retreat" 
+               class="property-card__image">
+          <div class="property-card__price">₹2.8 Cr</div>
+          <div class="property-card__location">34.1234° N, 74.8567° E</div>
+          <div class="property-card__heart">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <div class="property-card__details">
+            <div class="property-card__meta">
+              <span>4 beds</span>
+              <span>3 baths</span>
+              <span>3,600 sqft</span>
+            </div>
+            <div class="property-card__cta">Explore →</div>
+          </div>
+        </a>
+      </article>
+    </div>
 
-    <a href="property-detail.html" class="card card--hidden reveal" data-delay="2" data-category="lake" style="display:none;">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Srinagar Riverside Home" loading="lazy">
-        <span class="card__price">&#8377;2.8 Cr</span>
-        <span class="card__location">34.0749° N, 74.8200° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">3 beds</span><span class="card__details-item">2 baths</span><span class="card__details-item">2,100 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Srinagar Riverside Home</div>
-    </a>
+    <div class="load-more reveal">
+      <button class="btn btn--secondary magnetic">Show More</button>
+    </div>
+  </main>
 
-    <a href="property-detail.html" class="card card--hidden reveal" data-delay="3" data-category="city" style="display:none;">
-      <div class="card__image-wrap">
-        <img class="card__image" src="https://images.pexels.com/photos/1062009/pexels-photo-1062009.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pampore Saffron Villa" loading="lazy">
-        <span class="card__price">&#8377;2.1 Cr</span>
-        <span class="card__location">34.0145° N, 74.8536° E</span>
-        <button class="card__heart" aria-label="Save property"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
-        <div class="card__details">
-          <div class="card__details-row"><span class="card__details-item">4 beds</span><span class="card__details-item">3 baths</span><span class="card__details-item">2,800 sqft</span></div>
-          <span class="card__details-link">Explore <span class="btn__arrow">&rarr;</span></span>
-        </div>
-      </div>
-      <div class="card__name">Pampore Saffron Villa</div>
-    </a>
-  </div>
-
-  <div class="load-more-wrap">
-    <button class="btn btn--outline" id="loadMoreBtn">show more <span class="btn__arrow">&darr;</span></button>
-  </div>
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
 
   <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <a href="index.html" class="footer__logo">Kashmir Estates</a>
-        <p class="footer__tagline">finding your place in paradise</p>
+    <div class="footer__content">
+      <div>
+        <div class="footer__brand">Kashmir Estates</div>
+        <p class="footer__tagline">Finding you more than a home. Finding you your place in paradise.</p>
       </div>
-      <div class="footer__links">
-        <a href="properties.html">properties</a>
-        <a href="about.html">about</a>
-        <a href="contact.html">contact</a>
+      <div>
+        <div class="footer__heading">Explore</div>
+        <ul class="footer__links">
+          <li><a href="properties.html" class="footer__link">Properties</a></li>
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
       </div>
-      <p class="footer__copy">&copy; 2025 Kashmir Estates. Crafted with love in the valley.</p>
+      <div>        <div class="footer__heading">Properties</div>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Lake View</a></li>
+          <li><a href="#" class="footer__link">Mountain Villas</a></li>
+          <li><a href="#" class="footer__link">City Apartments</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__heading">Connect</div>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Instagram</a></li>
+          <li><a href="#" class="footer__link">Facebook</a></li>
+          <li><a href="#" class="footer__link">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Kashmir Estates. All rights reserved.</span>
+      <span>Crafted with love in Kashmir</span>
     </div>
   </footer>
-
-  <a href="https://wa.me/919876543210" class="whatsapp-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
 
   <script src="main.js"></script>
 </body>
